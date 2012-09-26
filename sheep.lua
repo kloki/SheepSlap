@@ -12,7 +12,8 @@ end
 
 function sheep:load(index,gameworld,x,y,radius)
    self.body = love.physics.newBody(gameworld,x,y,"dynamic")
-   self.shape = love.physics.newRectangleShape(40,40)
+   --self.shape = love.physics.newRectangleShape(40,40)
+   self.shape = love.physics.newPolygonShape(-20,-10,0,-20,20,-10,20,10,0,20,-20,10)
    self.fixture = love.physics.newFixture(self.body,self.shape,1)
    self.fixture:setUserData(index)
    self.fixture:setRestitution(0.6)
