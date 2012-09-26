@@ -1,56 +1,38 @@
-require 'TEsound'
-ball={
-   length,
-   width,
-   type,
-   destroy=false,
-   destructable=true,
-   hp=4,
-   jumpable=true
+require 'animator'
+sheep={
 }
 
 
-function ball:new (o)
+function sheep:new (o)
       o = o or {}
       setmetatable(o, self)
       self.__index = self
       return o
 end
 
-function ball:load(index,gameworld,x,y)
+function sheep:load(index,gameworld,x,y,radius)
    self.body = love.physics.newBody(gameworld,x,y,"dynamic")
-   self.shape = love.physics.newCircleShape(30)
+   self.shape = love.physics.newCircleShape(radius)
    self.fixture = love.physics.newFixture(self.body,self.shape,1)
    self.fixture:setUserData(index)
    self.fixture:setRestitution(0.9)
-   self.type="ball"
    self.destroy=false
-   self.destructable=true
-end
 
-
-function ball:draw(drawx,drawy)
-   love.graphics.setColor(0,100,100)
-   love.graphics.circle("fill",self.body:getX()+drawx,self.body:getY()+drawy,30)
-   love.graphics.setColor(255,255,255)
-end
-
-
-function ball:debug(drawx,drawy)
-   love.graphics.circle("line", drawx + self.body:getX(), drawy + self.body:getY(), self.shape:getRadius())
-   love.graphics.print(self.hp,self.body:getX()+drawx,self.body:getY()+drawy)
-end
-
-
-function ball:takeDamage(power)
-   self.hp=self.hp - power
-   if self.hp <= 0 then
-      self.destroy=true
-      TEsound.play('sounds/break.wav',"box")
-   end
+   self.sprite=newAnimation(love.graphics.newImage("Sheep/test.png"),64,64,0.2,0)
 
 end
 
-function ball:bounce()
-   TEsound.play('sounds/bounce.mp3',"ball",0.1)
+function sheep:update(dt)
+   self.sprite:update(dt)
+
 end
+
+function sheep:draw()
+   self.sprite:draw(self.body:getX(),self.body:getY(),self.body:getAngle())
+end
+
+function sheep:debug()
+   love.graphics.circle("line",self.body:getX(),self.body:getY(), self.shape:getRadius())
+  
+end
+
