@@ -24,6 +24,7 @@ end
 
 function sheep:update(dt)
    self.sprite:update(dt)
+   if (self.body:getY()-100)>screenheight then  self.destroy=true end
 
 end
 
@@ -32,7 +33,11 @@ function sheep:draw()
 end
 
 function sheep:debug()
-    local points={self.body:getWorldPoints(self.shape:getPoints())}
-    love.graphics.polygon("line", points)   
+   love.graphics.setColor(255,0,0)
+   local points={self.body:getWorldPoints(self.shape:getPoints())}
+   love.graphics.polygon("line", points)   
+   love.graphics.setColor(255,255,255)
+
+
 end
 

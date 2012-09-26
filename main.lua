@@ -2,6 +2,7 @@ require 'sheep'
 require 'solid'
 
 function love.load()
+   screenheight=640
    debug=true
    sheeps={}
    solids={}
@@ -12,27 +13,38 @@ function love.load()
 end
 
 function love.draw()
-   if debug then
-      for i,object in ipairs(solids) do
-	 object:debug() 
-      end
-      -- for i,object in ipairs(sheeps) do
-      -- 	 object:debug() 
-      -- end
-   
-   end
 
    for i,object in ipairs(sheeps) do
       object:draw() 
    end
 
+
+   if debug then
+      love.graphics.print("Sheep: "..#sheeps,10,10)
+      for i,object in ipairs(solids) do
+	 object:debug() 
+      end
+       for i,object in ipairs(sheeps) do
+       	 object:debug() 
+       end
+   
+   end
 end
 
 function love.update(dt)
+   --remove sheep of screen
+   
+   for i=#sheeps, 1 ,-1 do--backwards because we are removing stuff
+      if sheeps[i].destroy then
+	 sheeps[i].body:destroy()
+	 table.remove(sheeps,i)
+      end 
+   end
+
    --updatephysics
    gameworld:update(dt)
    
-
+   --update sheep
    for i,object in ipairs(sheeps) do
       object:update(dt) 
    end
@@ -42,6 +54,8 @@ function love.keypressed(key)
 
    if key=='escape' then
       love.event.quit()
+   elseif key=='d' then
+      if debug then debug=false else debug=true end
    elseif key==' ' then
       sheeps[#sheeps+1]=sheep:new()
       sheeps[#sheeps]:load(1,gameworld,480+math.random(58),200)
