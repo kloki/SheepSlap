@@ -16,7 +16,7 @@ function solid:load(index,gameworld,x,y,heigth,width)
    self.fixture:setUserData(index)
    self.destroy=false
 
-   self.sprite=newAnimation(love.graphics.newImage("Sheep/test.jpg"),64,64,0.2,0)
+
 end
 
 

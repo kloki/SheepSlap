@@ -16,9 +16,9 @@ function love.draw()
       for i,object in ipairs(solids) do
 	 object:debug() 
       end
-      for i,object in ipairs(sheeps) do
-	 object:debug() 
-      end
+      -- for i,object in ipairs(sheeps) do
+      -- 	 object:debug() 
+      -- end
    
    end
 
@@ -44,7 +44,7 @@ function love.keypressed(key)
       love.event.quit()
    elseif key==' ' then
       sheeps[#sheeps+1]=sheep:new()
-      sheeps[#sheeps]:load(1,gameworld,512,200,32)
+      sheeps[#sheeps]:load(1,gameworld,480+math.random(58),200)
    end
 
 
