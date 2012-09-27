@@ -2,6 +2,7 @@ require 'sheep'
 require 'solid'
 
 function love.load()
+   math.randomseed( os.time() )
    screenheight=640
    debug=true
    sheeps={}
@@ -10,6 +11,11 @@ function love.load()
    --add basket
    solids[#solids+1]=solid:new()
    solids[#solids]:load(1,gameworld,512,500,800,10)
+   solids[#solids+1]=solid:new()
+   solids[#solids]:load(1,gameworld,112,350,10,300)
+   solids[#solids+1]=solid:new()
+   solids[#solids]:load(1,gameworld,902,350,10,300)
+
 end
 
 function love.draw()
@@ -56,9 +62,10 @@ function love.keypressed(key)
       love.event.quit()
    elseif key=='d' then
       if debug then debug=false else debug=true end
+   elseif key=='x' then
+      spawnsheep()
    elseif key==' ' then
-      sheeps[#sheeps+1]=sheep:new()
-      sheeps[#sheeps]:load(1,gameworld,480+math.random(58),200)
+      punchsheep()
    end
 
 
@@ -71,5 +78,20 @@ function love.quit()
 end
 
 
+function spawnsheep()
+   sheeps[#sheeps+1]=sheep:new()
+   sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50)
+   
+end
+
+function punchsheep()
+   if #sheeps~=0 then
+      local minus1=1
+      local minus2=1
+      if math.random()>0.5 then minus1=-1 end
+      if math.random()>0.5 then minus2=-1 end
+      sheeps[math.random(#sheeps)].body:applyLinearImpulse(minus1*math.random(1,10)*1000,minus2*math.random(1,10)*1000)
+   end
+end
 
 
