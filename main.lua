@@ -1,5 +1,6 @@
 require 'sheep'
 require 'solid'
+require 'spawner'
 
 function love.load()
    math.randomseed( os.time() )
@@ -16,8 +17,6 @@ function love.load()
    solids[#solids+1]=solid:new()
    solids[#solids]:load(1,gameworld,902,350,10,300)
 
-
-   spawnXsheep(30)
 end
 
 function love.draw()
@@ -51,7 +50,10 @@ function love.update(dt)
 
    --updatephysics
    gameworld:update(dt)
-   
+
+   --spawn new sheep
+   spawner.update(dt)
+
    --update sheep
    for i,object in ipairs(sheeps) do
       object:update(dt) 
@@ -88,7 +90,7 @@ function spawnsheep()
 end
 
 function spawnXsheep(X)
-   for index=1,X
+   for index=1,X do
    sheeps[#sheeps+1]=sheep:new()
    sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50)
    
