@@ -16,6 +16,8 @@ function love.load()
    solids[#solids+1]=solid:new()
    solids[#solids]:load(1,gameworld,902,350,10,300)
 
+
+   spawnXsheep(30)
 end
 
 function love.draw()
@@ -79,9 +81,18 @@ end
 
 
 function spawnsheep()
+   if #sheeps<150 then
+      sheeps[#sheeps+1]=sheep:new()
+      sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50)
+   end
+end
+
+function spawnXsheep(X)
+   for index=1,X
    sheeps[#sheeps+1]=sheep:new()
    sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50)
    
+   end
 end
 
 function punchsheep()
