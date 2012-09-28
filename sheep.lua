@@ -25,7 +25,7 @@ end
 
 function sheep:update(dt)
    self.sprite:update(dt)
-   if (self.body:getY()-100)>screenheight then  self.destroy=true end
+   if (self.body:getY()-100)>screenheight or (self.body:getY()+500)<0 or (self.body:getX()-200)>screenwidth or (self.body:getX()+200)<0 then   self.destroy=true end
 
 end
 

@@ -1,14 +1,18 @@
 require 'sheep'
 require 'solid'
 require 'spawner'
+require 'textballoon'
 
 function love.load()
    math.randomseed( os.time() )
    screenheight=640
-   debug=true
+   screenwidth=1024
+   debug=false
    sheeps={}
    solids={}
    gameworld=love.physics.newWorld(0,9.81*64,true)
+   myfont=love.graphics.newFont('font/ChronoTrigger.ttf',40)
+   love.graphics.setFont(myfont)
    --add basket
    solids[#solids+1]=solid:new()
    solids[#solids]:load(1,gameworld,512,500,800,10)
@@ -16,15 +20,18 @@ function love.load()
    solids[#solids]:load(1,gameworld,112,350,10,300)
    solids[#solids+1]=solid:new()
    solids[#solids]:load(1,gameworld,902,350,10,300)
-
+   spawner.spawnXsheep(20)
 end
 
 function love.draw()
-
+   --draw sheep
    for i,object in ipairs(sheeps) do
       object:draw() 
    end
 
+
+   --draw balloon
+   textballoon.draw(dt)
 
    if debug then
       love.graphics.print("Sheep: "..#sheeps,10,10)
@@ -58,7 +65,11 @@ function love.update(dt)
    for i,object in ipairs(sheeps) do
       object:update(dt) 
    end
+
+   --update textballoon
+   textballoon.update(dt)
 end
+
 
 function love.keypressed(key)
 
@@ -66,8 +77,8 @@ function love.keypressed(key)
       love.event.quit()
    elseif key=='d' then
       if debug then debug=false else debug=true end
-   elseif key=='x' then
-      spawnsheep()
+   elseif key=='c' then
+      textballoon.currentEntry=math.random(#textballoon.winlines-1)
    elseif key==' ' then
       punchsheep()
    end
@@ -76,26 +87,10 @@ function love.keypressed(key)
 end
 
 
-
 function love.quit()
   print("One step closer to world hegemony.")
 end
 
-
-function spawnsheep()
-   if #sheeps<150 then
-      sheeps[#sheeps+1]=sheep:new()
-      sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50)
-   end
-end
-
-function spawnXsheep(X)
-   for index=1,X do
-   sheeps[#sheeps+1]=sheep:new()
-   sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50)
-   
-   end
-end
 
 function punchsheep()
    if #sheeps~=0 then
