@@ -10,7 +10,7 @@ function love.load()
    debug=false
    sheeps={}
    solids={}
-   gameworld=love.physics.newWorld(0,9.81*64,true)
+   gameworld=love.physics.newWorld(0,5*64,true)
    myfont=love.graphics.newFont('font/ChronoTrigger.ttf',40)
    love.graphics.setFont(myfont)
    --add basket
@@ -98,7 +98,7 @@ function punchsheep()
       local minus2=1
       if math.random()>0.5 then minus1=-1 end
       if math.random()>0.5 then minus2=-1 end
-      sheeps[math.random(#sheeps)].body:applyLinearImpulse(minus1*math.random(1,10)*1000,minus2*math.random(1,10)*1000)
+      sheeps[math.random(#sheeps)].body:applyLinearImpulse(minus1*math.random(1,10)*500,minus2*math.random(1,10)*500)
    end
 end
 
