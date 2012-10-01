@@ -10,9 +10,12 @@ function love.load()
    debug=false
    sheeps={}
    solids={}
+   --graphics
    gameworld=love.physics.newWorld(0,5*64,true)
    myfont=love.graphics.newFont('font/ChronoTrigger.ttf',40)
    love.graphics.setFont(myfont)
+
+   background=love.graphics.newImage("Img/background.png")
    --add basket
    solids[#solids+1]=solid:new()
    solids[#solids]:load(1,gameworld,512,500,800,10)
@@ -24,6 +27,9 @@ function love.load()
 end
 
 function love.draw()
+   --draw background
+   love.graphics.draw(background,0,0)
+
    --draw sheep
    for i,object in ipairs(sheeps) do
       object:draw() 
