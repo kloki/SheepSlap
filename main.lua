@@ -14,6 +14,16 @@ function love.load()
    gameworld=love.physics.newWorld(0,5*64,true)
    myfont=love.graphics.newFont('font/ChronoTrigger.ttf',40)
    love.graphics.setFont(myfont)
+   SList={}
+   numberofSheep=0
+   --loadsheep
+   while true do
+      if love.filesystem.exists( "Sheep/sheep"..(numberofSheep+1)..".png" ) then
+	 numberofSheep=numberofSheep+1
+	 SList[#SList+1]=love.graphics.newImage("Sheep/sheep"..numberofSheep..".png")
+      else break end
+   end
+ 
 
    background=love.graphics.newImage("Img/background.png")
    --add basket

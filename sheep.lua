@@ -10,7 +10,7 @@ function sheep:new (o)
       return o
 end
 
-function sheep:load(index,gameworld,x,y,radius)
+function sheep:load(index,gameworld,x,y,Satlas)
    self.body = love.physics.newBody(gameworld,x,y,"dynamic")
    --self.shape = love.physics.newRectangleShape(40,40)
    self.shape = love.physics.newPolygonShape(-20,-10,0,-20,20,-10,20,10,0,20,-20,10)
@@ -19,7 +19,7 @@ function sheep:load(index,gameworld,x,y,radius)
    self.fixture:setRestitution(0.6)
    self.destroy=false
 
-   self.sprite=newAnimation(love.graphics.newImage("Sheep/test.png"),64,64,0.2,0)
+   self.sprite=newAnimation(Satlas,64,64,0.2,0)
 
 end
 

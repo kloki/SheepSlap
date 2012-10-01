@@ -19,15 +19,13 @@ end
 function spawner.spawnsheep()
    if #sheeps<150 then
       sheeps[#sheeps+1]=sheep:new()
-      sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50)
+      sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50,SList[math.random(numberofSheep)])
    end
 end
 
 function spawner.spawnXsheep(X)
    for index=1,X do
-   sheeps[#sheeps+1]=sheep:new()
-   sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50)
-   
+      spawner.spawnsheep()
    end
 end
 
