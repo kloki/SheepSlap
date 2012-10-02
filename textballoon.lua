@@ -1,17 +1,18 @@
 require 'utils'
-
+require 'animator'
 textballoon={
    on=false,
    balloon= love.graphics.newImage('balloon/balloon.png' ),
    counter=0,
    counter2=0,
    winlines=love.filesystem.newFile('text/win.txt'):read():split("\n"),
-   currentEntry=0
+   currentEntry=0,
+   speaker=newAnimation(love.graphics.newImage('balloon/nuraroanne.png'),211,297,0.3,0)
+   
 }
 
 
 function textballoon.load()
-  
 end
 
 function textballoon.update(dt)
@@ -31,7 +32,8 @@ function textballoon.update(dt)
 	 textballoon.counter=0
 	 textballoon.counter2=0
       end
-
+      --update sprite
+      textballoon.speaker:update(dt)
    --check if minimum sheep
    elseif #sheeps <15 then 
       --set balloon on
@@ -47,6 +49,7 @@ function textballoon.draw()
       love.graphics.setColor(0,0,0)
       love.graphics.printf(textballoon.winlines[textballoon.currentEntry],300,85,550)
       love.graphics.setColor(255,255,255)
+      textballoon.speaker:draw(100,200)
    end
 end
 

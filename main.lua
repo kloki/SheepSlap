@@ -14,6 +14,9 @@ function love.load()
    gameworld=love.physics.newWorld(0,5*64,true)
    myfont=love.graphics.newFont('font/ChronoTrigger.ttf',40)
    love.graphics.setFont(myfont)
+
+
+
    SList={}
    numberofSheep=0
    --loadsheep
