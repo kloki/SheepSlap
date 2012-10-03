@@ -33,12 +33,10 @@ function love.load()
    solids[#solids+1]=solid:new()
    solids[#solids]:load(1,gameworld,512,500,'R',{800,10})
    solids[#solids+1]=solid:new()
-   solids[#solids]:load(1,gameworld,112,350,'R',{10,300})
+   solids[#solids]:load(1,gameworld,117,505,'T',{0,0,-100,0,-100,-150})
    solids[#solids+1]=solid:new()
-   solids[#solids]:load(1,gameworld,902,350,'R',{10,300})
-   solids[#solids+1]=solid:new()
-   solids[#solids]:load(1,gameworld,500,200,'T',{-40,-40,50,50,-30,0})
-   
+   solids[#solids]:load(1,gameworld,902,505,'T',{0,0,100,0,100,-150})
+
    
    spawner.spawnXsheep(20)
 end
