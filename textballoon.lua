@@ -47,7 +47,7 @@ function textballoon.draw()
    if textballoon.on then
       love.graphics.draw(textballoon.balloon,0,0)
       love.graphics.setColor(0,0,0)
-      love.graphics.printf(textballoon.winlines[textballoon.currentEntry],300,85,550)
+      love.graphics.printf(textballoon.winlines[textballoon.currentEntry],360,150,550)
       love.graphics.setColor(255,255,255)
       textballoon.speaker:draw(100,200)
    end
