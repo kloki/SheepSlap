@@ -17,7 +17,7 @@ function spawner.update(dt)
 end
 
 function spawner.spawnsheep()
-   if #sheeps<150 then
+   if #sheeps<300 then
       sheeps[#sheeps+1]=sheep:new()
       sheeps[#sheeps]:load(1,gameworld,300+math.random(300),-50,SList[math.random(numberofSheep)])
    end
