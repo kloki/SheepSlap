@@ -35,7 +35,7 @@ function textballoon.update(dt)
       --update sprite
       textballoon.speaker:update(dt)
    --check if minimum sheep
-   elseif #sheeps <15 then 
+   elseif #sheeps <5 then 
       --set balloon on
       textballoon.on=true 
       --set text for balloon
