@@ -7,7 +7,7 @@ textballoon={
    counter2=0,
    winlines=love.filesystem.newFile('text/win.txt'):read():split("\n"),
    currentEntry=0,
-   speaker=newAnimation(love.graphics.newImage('balloon/nuraroanne.png'),211,297,0.3,0)
+   speaker=newAnimation(love.graphics.newImage('balloon/shaapman.png'),150,400,0.3,0)
    
 }
 
