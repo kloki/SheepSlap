@@ -11,7 +11,7 @@ function spawner.update(dt)
       spawner.spawnsheep()
    end
 
-   if love.keyboard.isDown('x') then
+   if love.keyboard.isDown('up') then
       spawner.spawnsheep()
    end
 end

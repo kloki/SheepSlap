@@ -50,12 +50,16 @@ function love.draw()
       object:draw() 
    end
 
+   --draw reclame
+   love.graphics.print("www.stiefcollectief.nl",650,540)
+   love.graphics.print("Schaapman",40,540)
 
+   love.graphics.print("Sheep: "..#sheeps,10,10)
    --draw balloon
    textballoon.draw(dt)
 
    if debug then
-      love.graphics.print("Sheep: "..#sheeps,10,10)
+      
       for i,object in ipairs(solids) do
 	 object:debug() 
       end
