@@ -17,7 +17,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-=========
+Description
+===========
 
 Met deze interactieve ervaring wil stiefcollectief de geconstrueerde dichotomie tussen het tastbare en imaginaire zichtbaar maken. Door het spel met ruimte en tijd ontstaat een beweging die tegenstellingen laat versmelten. Toeschouwer wordt deelnemer en deelnemer wordt toeschouwer.
 
@@ -25,32 +26,32 @@ Terwijl de bezoeker probeert door fysiek contact een actie in gang te zetten, co
 
 Of niet dan?
 
-=========
 
-Controls:
+
+Controls
+========
 
 space: make the sheep fly
 
 up arrow: Spawn multiple sheep
 
 d: show collision boxes
-========
+
+Requirements
+============
 
 This game is made to work with the Makey Makey. see <http://www.makeymakey.com>
 
 This game requires the awesome love game engine to run. see  <http://www.love2d.org>.
 
-=========
 
-Installation guide.
-
+Installation guide
+==================
 Step 1: install love game engine.
      Download the file at <https://love2d.org/> for your OS(Windows,OSX,linux) and install it.
 
 Step 2: Double click the shaapman.love to start the game.
 
-
-========
 The source code can be downloaded at <https://github.com/kloki/SheepSlap>
 
 To run the source code see:<https://love2d.org/wiki/Getting_Started>
