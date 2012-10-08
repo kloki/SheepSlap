@@ -19,9 +19,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 =========
 
-SCHAAPMAN // stiefcollectief
-
-Multimediainstallatie
 
 Met deze interactieve ervaring wil stiefcollectief de geconstrueerde dichotomie tussen het tastbare en imaginaire zichtbaar maken. Door het spel met ruimte en tijd ontstaat een beweging die tegenstellingen laat versmelten. Toeschouwer wordt deelnemer en deelnemer wordt toeschouwer.
 
@@ -31,12 +28,10 @@ Of niet dan?
 
 =========
 
-Slap the sheep out of the box to win.
-
 Controls:
-space: make the sheep fly.
+space: make the sheep fly
 up arrow: Spawn multiple sheep
-d=show collision boxes
+d: show collision boxes
 
 This game is made to work with the Makey Makey. see <http://www.makeymakey.com>
 
