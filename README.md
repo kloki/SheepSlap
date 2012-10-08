@@ -19,6 +19,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 =========
 
+SCHAAPMAN // stiefcollectief
+
+Multimediainstallatie
+
+Met deze interactieve ervaring wil stiefcollectief de geconstrueerde dichotomie tussen het tastbare en imaginaire zichtbaar maken. Door het spel met ruimte en tijd ontstaat een beweging die tegenstellingen laat versmelten. Toeschouwer wordt deelnemer en deelnemer wordt toeschouwer.
+
+Terwijl de bezoeker probeert door fysiek contact een actie in gang te zetten, construeren die pogingen direct een identiteit waarin de ervaring plaatsvindt. De keuzes van het individu leiden tot een collectieve realiteit. Schapen omvatten een element van transitie in de samenleving. Tussen urbane en rurale werelden in brengen ze mensen in contact met het ‘zelf’ en belichamen de pluraliteit van identiteiten die de samenleving voortbrengt.
+
+Of niet dan?
+
+=========
+
 Slap the sheep out of the box to win.
 
 Controls:
